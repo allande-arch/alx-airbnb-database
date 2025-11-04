@@ -18,3 +18,8 @@ PARTITION BY RANGE (YEAR(check_in_date)) (
 -- Rebuild indexes on partitioned table
 ALTER TABLE bookings DROP INDEX idx_bookings_dates;
 CREATE INDEX idx_bookings_dates ON bookings(check_in_date, check_out_date);
+-- 1. countries
+CREATE TABLE countries (
+    country_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+) ENGINE=InnoDB;
