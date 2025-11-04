@@ -23,3 +23,24 @@ CREATE INDEX idx_properties_price ON properties(price_per_night);
 
 -- Composite index for frequent search
 CREATE INDEX idx_search ON properties(city_id, price_per_night, max_guests);
+
+
+
+
+---
+
+# Task 6: Performance Monitoring – `performance_monitoring.md`
+
+```markdown
+# Database Performance Monitoring
+
+## Tools Used
+- `EXPLAIN ANALYZE` (MySQL 8.0.18+)
+- `SHOW PROFILE` (deprecated, but simulated)
+- `performance_schema`
+
+## Sample Query Analysis
+
+```sql
+EXPLAIN ANALYZE
+SELECT COUNT(*) FROM bookings WHERE check_in_date > '2025-01-01';
